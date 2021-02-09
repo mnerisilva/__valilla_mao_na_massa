@@ -1,14 +1,14 @@
 (function(){
-        let conversa = document.querySelector('.conversa');
+        let dialogo = document.querySelector('.dialogo');
         let topInicial = window.innerHeight;
         let exibir = document.querySelector('.exibir');
-        let proximoAssunto = document.querySelector('.exibir ~ .assunto');
+        let proximoTema = document.querySelector('.exibir ~ .tema');
         let personagem_2 = document.querySelector('.personagem-2 img');  
         
         
-        conversa.style.top = topInicial+'px';
-        conversa.style.top = -250+'px';
-        return
+        dialogo.style.top = topInicial+'px';
+        /*dialogo.style.top = -250+'px';*/
+        //return
         console.log(topInicial);
         console.log(personagem_2)
         console.log(personagem_2.getAttribute('src')); 
@@ -22,16 +22,16 @@
                 personagem_2.setAttribute('src', 'assets/chefe-idle.gif');
                 console.log(personagem_2.getAttribute('src')); 
                 console.log('topInicial: '+topInicial);
-                conversa.style.top = (topInicial - 200) +'px';
+                dialogo.style.top = (topInicial - 200) +'px';
                 exibir.style.opacity = 1;
                 personagem_2.setAttribute('src', 'assets/chefe-digitando.gif');
         }  
         
         function proximo(){
                 personagem_2.setAttribute('src', 'assets/chefe-digitando.gif');
-                conversa.style.top = (topInicial - 400) +'px';
-                proximoAssunto.classList.add('exibir');
-                proximoAssunto.style.opacity = 1;
+                dialogo.style.top = (topInicial - 400) +'px';
+                proximoTema.classList.add('exibir');
+                proximoTema.style.opacity = 1;
                 personagem_2.setAttribute('src', 'assets/chefe-digitando.gif');
         }
         

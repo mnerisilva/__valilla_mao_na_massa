@@ -1,0 +1,144 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+} 
+
+body {
+    overflow: hidden;
+    font-weight: 400;
+    font-family: 'Open Sans', sans-serif;
+    color: rgb(93 90 90);
+}
+
+
+.dialogo .tema {
+    position: relative;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-top: 2em;/*
+    background: #fff;*/
+    padding: 5px 12px;
+    min-height: 6vh;
+    font-size: 1.3em;
+    /*box-shadow: 2px 2px 1px rgb(0 0 0 / 12%);*/
+    max-width: 70%;
+    max-width: 100%;
+    z-index: 2;
+    border-radius: 8px;*/
+    opacity: 0;
+}
+
+.dialogo .text-content {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-top: 2em;
+    background: #fff;
+    padding: 5px 12px;
+    min-height: 6vh;
+    font-size: 1.3em;
+    box-shadow: 2px 2px 1px rgb(0 0 0 / 12%);
+    max-width: 70%;
+    z-index: 2;
+    border-radius: 8px;    
+}
+
+.dialogo .content-change {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.questao {
+    /*width: 100% !important;
+    background: red;*/
+    justify-content: center !important;
+}
+
+.exibir {
+    /*opacity: 0;*/
+    opacity: 1;
+    transition: all 3s ease;
+}
+
+.questao .text-content {
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.questao .text-content .op {
+    padding: .6em;
+}
+
+.container-app {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.wrapper-dialog {
+    position: relative;
+    width: 50vw;
+    height: 100vh;
+    background: url(assets/bg_textura.png);
+    overflow: hidden;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    align-content: center;
+}
+.dialogo {
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    /*display: flex;
+    flex-direction: column;
+    align-items: flex-end;*/
+    padding: 2em;
+}
+
+
+.tema p {
+    padding: 0;
+    margin: 0;
+}
+
+
+.text-content p::before {
+    content: '';
+    position: absolute;
+    top: 58px;
+    right: -36px;
+    border-top: 25px solid rgb(255 255 255 / 95%);
+    border-left: 0 solid transparent;
+    border-right: 55px solid transparent;
+}
+
+.personagem {
+    width: 25vw;
+    height: 100vh;
+}
+
+.personagem img {
+    width: 25em;
+}
+
+.personagem-1 {
+    display: flex;
+    align-items: flex-end;
+    background: url(assets/bg-func.png);
+}
+
+.personagem-2 {
+    display: flex;
+    align-items: flex-end;
+    background: url(assets/bg-chefe.png);
+}
+
+
+

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prism Textarea</title>
+    <link rel="stylesheet" href="lib/codemirror.css">
+    <link rel="stylesheet" href="theme/dracula.css">
+</head>
+<body>
+
+        <textarea id="text-area" onchange="update"><h1>Meu Título</h1></textarea>
+        <button id="salvar">Salvar</button>
+</body>
+<script src="lib/codemirror.js"></script>
+<script src="mode/xml/xml.js"></script>
+<script src="addon/edit/closetag.js"></script>
+<script src="mode/javascript/javascript.js"></script>
+<script>
+    let btnSalvar = document.getElementById('salvar');
+    btnSalvar.addEventListener('click', update);
+    let editor;
+    let text_area;
+    let conteudo;
+    let classeEditor = document.querySelector('.CodeMirror');
+    console.log(classeEditor);
+    function update(){
+        editor = '';
+        text_area = '';
+        text_area = document.getElementById('text-area');
+        if(classeEditor != null){
+            classeEditor.remove();
+        }
+        editor = CodeMirror.fromTextArea(text_area, {
+        mode: "xml",
+        theme: "dracula",
+        autoCloseTags: true,
+        lineNumbers: true
+        });
+    }
+    /*text_area = document.getElementById('text-area');
+    conteudo = text_area.innerHTML +'\n';
+    console.log(conteudo);
+    text_area.innerHTML = `${conteudo}<p>Meu Parágrafo</p>`;*/
+    update();
+</script>
+</html>

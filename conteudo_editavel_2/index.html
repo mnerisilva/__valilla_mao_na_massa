@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conteudo Editavel</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .content {
+            width: 70vw;
+            height: 80vh;
+            border: solid thin #ccc;
+            padding: 10px;
+        }
+
+        code {
+            /*background-color: #ccc;*/
+            overflow: scroll !important;
+        }
+        .bloco {
+            /*border: solid 1px #ccc;*/
+  
+        }
+    </style>
+    <!--<link href="js/prism.css" rel="stylesheet" />-->
+    <link href="css/prism.css" rel="stylesheet" />
+    <link href="css/style.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="content">
+        <div class="bloco">
+            <p class="editable" contenteditable="true">O evento DOMContentLoaded é acionado quando todo o HTML foi completamente carregado e analisado, sem aguardar pelo CSS, imagens, e subframes para encerrar o carregamento. Um evento muito diferente - load - deve ser
+                 usado apenas para detectar uma página completamente carregada. É um engano comum as pessoas usarem load quando DOMContentLoaded seria muito mais apropriado.</p>
+             <div class="prism">
+            </div>
+             <p class="editable" contenteditable="true">Se você quer que o DOM seja analisado o mais rápido possível após uma requisição do usuário, você deve usar recursos do javascript assíncrono e otimizar o carregamento de
+                folhas de estilo pois, caso contrário, a página será carregada mais lentamente pois muitos itens serão carregados paralelamente, atrasando a visualização da página.</p>
+                <textarea name="texto" id="texto"></textarea>
+                <button type="button" id="botao">get</button>
+        </div>
+    </div>
+    
+	<script src="js/prism.js"></script>
+	<script src="js/script.js"></script>
+</body>
+</html>

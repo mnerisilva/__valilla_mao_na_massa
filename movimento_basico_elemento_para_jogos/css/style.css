@@ -1,0 +1,25 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.elemento {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background-color: red;
+    top: 100px;
+    left: 100px; 
+    /*transition: all .9s;   */
+}
+
+.game-wrapper {
+    width: 100vw;
+    height: 100vh;
+    background-color: #ccc;
+}
+
+.blue {
+    background-color: blue;
+}

@@ -58,9 +58,9 @@ body {
 }
 
 .exibir {
-    /*opacity: 0;*/
-    opacity: 1;
-    transition: all 3s ease;
+    opacity: 1 !important;
+    /*opacity: 1;*/
+    transition: opacity 3s ease;
 }
 
 .questao .text-content {
@@ -138,6 +138,10 @@ body {
     display: flex;
     align-items: flex-end;
     background: url(assets/bg-chefe.png);
+}
+
+.tema {
+    opacity: 0;
 }
 
 

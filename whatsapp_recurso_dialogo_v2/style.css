@@ -151,7 +151,7 @@ body {
 .dialogo h3 {
     position: absolute;
     width: 50%;
-    height: 100px;
+    /*height: 100px;*/
     padding: 10px 50px;
     background-color:#fff;
     border-radius: 10px;

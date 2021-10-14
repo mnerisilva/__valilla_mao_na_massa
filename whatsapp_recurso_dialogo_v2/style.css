@@ -144,8 +144,11 @@ body {
 }
 
 .dialogo {
-    position: relative;
-    overflow: auto;
+    /*position: relative;
+    overflow: auto;*/
+    position: absolute;
+    bottom: -100vh;
+    border: solid;
 }
 
 .dialogo h3 {
@@ -166,6 +169,7 @@ body {
     display: flex;
     justify-content: end;
     align-content: flex-end;
+    margin-bottom: 70px;
 
 }
 
@@ -173,5 +177,6 @@ body {
     width: 100%;;
     display: flex;
     align-content: flex-start;
+    margin-bottom: 70px;
 
 }

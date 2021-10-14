@@ -6,14 +6,20 @@ const nova_div = document.createElement('div');
 const tempos = [3000, 6000, 12000, 18000, 26000, 32000, 38000, 44000];
 const quantidade = tempos.length;
 
+let todos_h3 = document.querySelectorAll('.dialogo h3');
 
-let count = 500;
-let altura = 80;
-let data_id = 1;
+todos_h3.map((item, index) => {
+    item.innerHTML
+});
 
-let distancia = 200;
 
-let n1 = 30;
+//let count = 500;
+//let altura = 80;
+//let data_id = 1;
+
+//let distancia = 200;
+
+/*let n1 = 30;
 let n2 = 200;
 let n3 = 400;
 let n4 = 600;
@@ -29,11 +35,11 @@ let n13 = 2400;
 let n14 = 2600;
 let n15 = 2800;
 let n16 = 3000;
-let n17 = 3200;
+let n17 = 3200;*/
 
         tempos.map((intervalo, index) => {
             setTimeout(function(){
-                console.log(dialogos[index].pergunta.text)
+                /*console.log(dialogos[index].pergunta.text)
                 let h3 = document.createElement('h3');
                 h3.style.marginBottom = 60+'px';
                 h3.dataset.id = data_id.toString();
@@ -100,7 +106,7 @@ let n17 = 3200;
                 }
                 altura = altura - 15;
                 count = count - 100;
-                data_id = data_id + 1
+                data_id = data_id + 1;*/
             },intervalo)
         })
  

@@ -6,11 +6,16 @@ const nova_div = document.createElement('div');
 const tempos = [3000, 6000, 12000, 18000, 26000, 32000, 38000, 44000];
 const quantidade = tempos.length;
 
-let todos_h3 = document.querySelectorAll('.dialogo h3');
+const todos_h3 = document.querySelectorAll('.dialogo h3');
 
-todos_h3.map((item, index) => {
-    item.innerHTML
-});
+
+
+
+for (let i=0;i<todos_h3.length;i++){    
+    todos_h3[i].innerHTML = dialogos[i].pergunta.text
+    dialogos[i].personagem === '1' ? todos_h3[i].dataset.posicao = '1' :  todos_h3[i].dataset.posicao = '2'
+    todos_h3[i].dataset.posicao == 1 ? todos_h3[i].parentElement.classList.add('direita') : todos_h3[i].parentElement.classList.add('esquerda')
+}
 
 
 //let count = 500;

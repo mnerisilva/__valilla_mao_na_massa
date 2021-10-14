@@ -26,6 +26,11 @@ export const dialogos = [
 
         pergunta: {text: "Já ouviu falar em nuvem?"}
 
+    },
+    {
+
+        pergunta: {text: "Já ouvi falar, sim. Mas não sei bem direito o que é."}
+
     }
 
 ]

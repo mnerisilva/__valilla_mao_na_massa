@@ -8,6 +8,13 @@ const quantidade = tempos.length;
 
 const todos_h3 = document.querySelectorAll('.dialogo h3');
 
+const todos_div = document.querySelectorAll('.dialogo div');
+console.log(todos_div);
+
+todos_div.forEach(function(div){
+    div.classList.add('esconde');
+})
+
 
 
 
@@ -42,8 +49,18 @@ let n15 = 2800;
 let n16 = 3000;
 let n17 = 3200;*/
 
+let _bottom = dialogo.offsetHeight * -1;
+
         tempos.map((intervalo, index) => {
             setTimeout(function(){
+                //let altura = parseInt(todos_div[index].dataset.altura)
+                todos_div[index].classList.add('mostra')
+                let altura = todos_div[index].offsetHeight + 70
+                console.log('altura: --' + altura)
+                console.log('_bottom: ' + _bottom)
+                _bottom = (_bottom) + altura;
+                console.log('dialogo: ' + _bottom+'px');
+                dialogo.style.bottom = _bottom+'px';
                 /*console.log(dialogos[index].pergunta.text)
                 let h3 = document.createElement('h3');
                 h3.style.marginBottom = 60+'px';

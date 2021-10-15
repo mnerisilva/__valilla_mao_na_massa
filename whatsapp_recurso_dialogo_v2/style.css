@@ -8,7 +8,7 @@ body {
     overflow: hidden;
     font-weight: 400;
     font-family: 'Open Sans', sans-serif;
-    color: rgb(116 99 99);
+    color: rgb(145 141 141);
 }
 
 
@@ -88,15 +88,15 @@ body {
     align-items: center;
     align-content: center;
 }
-.dialogo {
+/*.dialogo {
     position: absolute;
     width: 100%;
     height: 100vh;
     /*display: flex;
     flex-direction: column;
-    align-items: flex-end;*/
+    align-items: flex-end;
     padding: 2em;
-}
+}*/
 
 
 .tema p {
@@ -147,8 +147,9 @@ body {
     /*position: relative;
     overflow: auto;*/
     position: absolute;
-    bottom: -100vh;
-    border: solid;
+    width: 100%;
+    /*bottom: -100vh;*/
+    bottom: -1050px;
 }
 
 .dialogo h3 {
@@ -170,6 +171,7 @@ body {
     justify-content: end;
     align-content: flex-end;
     margin-bottom: 70px;
+    padding-right: 20px;
 
 }
 
@@ -178,5 +180,15 @@ body {
     display: flex;
     align-content: flex-start;
     margin-bottom: 70px;
+    padding-left: 20px;
+}
 
+.esconde {
+    transition: opacity .3s ease-out;
+    opacity: 0;
+}
+
+.mostra {
+    transition: opacity .3s ease-out;
+    opacity: 1;
 }

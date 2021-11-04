@@ -39,6 +39,7 @@ export const dialogos = [
         questao_vinculada: 0,
         id_questao_vinculada: ""
 
+
     },
     {
 
@@ -54,7 +55,6 @@ export const dialogos = [
         pergunta: {text: "Já ouvi falar, sim. Mas não sei bem direito o que é."},
         questao_vinculada: 0,
         id_questao_vinculada: ""
-
     }
 
 ]

@@ -10,9 +10,7 @@ export const dialogos = [
         personagem: '1',
         pergunta: {text: "Você pode salvar aquele arquivo da apresentação de modo que eu possa acessá-lo de todos os lugares?"},
         questao_vinculada: 1,
-        questao_vinculada: [
-            questao1: 
-        ]
+        questao_vinculada: ""
     },
     {   
         personagem: '2',

@@ -13,7 +13,7 @@ export const dialogos = [
     tem_questao: 1,
     questao_vinculada: [
       {
-        pegunta: "Qual seira sua resposa?",
+        enunciado: "Qual seria sua resposa?",
       },
       {
         opcoes: [

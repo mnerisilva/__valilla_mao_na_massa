@@ -32,12 +32,18 @@ export const dialogos = [
         feedbacks: [
           {
             feed: "Acho que é melhor salvar na nuvem.",
+            frase_contexto: ["Veja mais sobre isso neste vídeo:"],
+            conteudo_complementar: ["O que é nuvem? https://www.youtube.com/watch?v=67okcMhiFo4"]
           },
           {
             feed: "Pode até ser, mas o melhor é salvar em uma nuvem.",
+            frase_contexto: ["Pode até ser, mas o melhor é salvar em uma nuvem."],
+            conteudo_complementar: ["O que é nuvem? https://www.youtube.com/watch?v=67okcMhiFo4"]
           },
           {
-            feed: "Perfeito! 😃",
+            feed: "Perfeito! 😃😃😃",
+            frase_contexto: ["Assisti a um vídeo sobre isso hoje mesmo, veja:"],
+            conteudo_complementar: ["O que é nuvem? https://www.youtube.com/watch?v=67okcMhiFo4"]
           },
         ],
       },

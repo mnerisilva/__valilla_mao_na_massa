@@ -1,4 +1,4 @@
-import { dialogos } from "./json.js";
+import { obj_dialogo } from "./json.js";
 
 const dialogo = document.querySelector(".dialogo");
 const nova_div = document.createElement("div");
@@ -14,10 +14,11 @@ let pers2_src_func_parado = "assets/chefe-idle.gif";
 
 console.log("src: " + src_personage1);
 
-const tempos = [3000, 6000, 12000, 18000, 26000, 32000, 38000, 44000];
+//const tempos = [3000, 6000, 12000, 18000, 26000, 32000, 38000, 44000];
+const tempos = [3000, 6000, 12000, 18000, 26000];
 const quantidade = tempos.length;
 
-const todos_h3 = document.querySelectorAll(".dialogo h3");
+const todos_h3 = document.querySelectorAll(".dialogo h3"); // todos os h3 da div classe "dialogo"
 
 const todos_div = document.querySelectorAll(".dialogo div");
 console.log(todos_div);
@@ -26,15 +27,16 @@ todos_div.forEach(function (div) {
   div.classList.add("esconde");
 });
 
-for (let i = 0; i < todos_h3.length; i++) {
-  todos_h3[i].innerHTML = dialogos[i].texto_dialogo.text;
-  dialogos[i].personagem === "1"
-    ? (todos_h3[i].dataset.posicao = "1")
-    : (todos_h3[i].dataset.posicao = "2");
-  todos_h3[i].dataset.posicao == 1
-    ? todos_h3[i].parentElement.classList.add("direita")
-    : todos_h3[i].parentElement.classList.add("esquerda");
-}
+          // itera array de dialogos - inicio do bloco - [neste ponto os balões ainda estão escondidos, posicionados fora da janela de exibição - window]
+          for (let i = 0; i < obj_dialogo.length; i++) { 
+            todos_h3[i].innerHTML = obj_dialogo[i].texto_dialogo.text[0]; // insere dentro dos h3´s da classe "dialogos" o conteúdo externo vindo do array de dialogos[x].texto_dialogo.text
+            obj_dialogo[i].personagem === "1" // posiciona balão de acordo com o personagem (esquerda ou direita)
+              ? (todos_h3[i].dataset.posicao = "1")
+              : (todos_h3[i].dataset.posicao = "2");
+            todos_h3[i].dataset.posicao == 1
+              ? todos_h3[i].parentElement.classList.add("direita")
+              : todos_h3[i].parentElement.classList.add("esquerda");
+          } // itera array de dialogos - fim do bloco
 
 let _bottom = dialogo.offsetHeight * -1;
 

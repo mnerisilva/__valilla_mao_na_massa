@@ -14,6 +14,14 @@ let pers2_src_func_parado = "assets/chefe-idle.gif";
 
 console.log("src: " + src_personage1);
 
+//const arrElementosDiv = [];
+
+const elementos = [];
+
+insereElementoDinamicamente();
+
+const arrDialogoComReflitaResponda = [];
+
 //const tempos = [3000, 6000, 12000, 18000, 26000, 32000, 38000, 44000];
 const tempos = [3000, 6000, 12000, 18000, 26000];
 const quantidade = tempos.length;
@@ -27,16 +35,8 @@ todos_div.forEach(function (div) {
   div.classList.add("esconde");
 });
 
-          // itera array de dialogos - inicio do bloco - [neste ponto os balões ainda estão escondidos, posicionados fora da janela de exibição - window]
-          for (let i = 0; i < obj_dialogo.length; i++) { 
-            todos_h3[i].innerHTML = obj_dialogo[i].texto_dialogo.text[0]; // insere dentro dos h3´s da classe "dialogos" o conteúdo externo vindo do array de dialogos[x].texto_dialogo.text
-            obj_dialogo[i].personagem === "1" // posiciona balão de acordo com o personagem (esquerda ou direita)
-              ? (todos_h3[i].dataset.posicao = "1")
-              : (todos_h3[i].dataset.posicao = "2");
-            todos_h3[i].dataset.posicao == 1
-              ? todos_h3[i].parentElement.classList.add("direita")
-              : todos_h3[i].parentElement.classList.add("esquerda");
-          } // itera array de dialogos - fim do bloco
+iteraObjDialogo();
+console.log("--- " + arrDialogoComReflitaResponda);
 
 let _bottom = dialogo.offsetHeight * -1;
 
@@ -72,3 +72,35 @@ tempos.map((intervalo, index) => {
     dialogo.style.bottom = _bottom + "px";
   }, intervalo);
 });
+
+// FUNÇÕES DO PROJETO-----------------------------------------------------------------------------------------
+function iteraObjDialogo() {
+  // itera array de dialogos - inicio do bloco - [neste ponto os balões ainda estão escondidos, posicionados fora da janela de exibição - window]
+  for (let i = 0; i < obj_dialogo.length; i++) {
+    todos_h3[i].innerHTML = obj_dialogo[i].texto_dialogo.text[0]; // insere dentro dos h3´s da classe "dialogos" o conteúdo externo vindo do array de dialogos[x].texto_dialogo.text
+    obj_dialogo[i].personagem === "1" // posiciona balão de acordo com o personagem (esquerda ou direita)
+      ? (todos_h3[i].dataset.posicao = "1")
+      : (todos_h3[i].dataset.posicao = "2");
+    todos_h3[i].dataset.posicao == 1
+      ? todos_h3[i].parentElement.classList.add("direita")
+      : todos_h3[i].parentElement.classList.add("esquerda");
+    if (obj_dialogo[i].tem_questao === true) {
+      arrDialogoComReflitaResponda.push(true);
+    } else {
+      arrDialogoComReflitaResponda.push("");
+    }
+  } // itera array de dialogos - fim do bloco
+}
+
+function insereElementoDinamicamente() {
+  for (let i = 0; i < obj_dialogo.length; i++) {
+    elementos[i] = document.createElement("div");
+  }
+  for (let i = 0; i < obj_dialogo.length; i++) {
+    elementos[i].innerHTML = "<h3></h3>";
+  }
+
+  for (let i = 0; i < obj_dialogo.length; i++) {
+    dialogo.append(elementos[i]);
+  }
+}

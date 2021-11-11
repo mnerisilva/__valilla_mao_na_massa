@@ -88,7 +88,7 @@ function iteraObjDialogo() {
     elementoQuestao.classList.add('questao')
         if(obj_dialogo[i].tem_questao === true){
             elementoQuestao.innerHTML = `
-                <ul>
+                <ul data-id_dialogo=${obj_dialogo[i].id_dialogo} data-index=${i}>
                     <li class="enunciado">${obj_dialogo[i].questao_vinculada[0].enunciado}</li>
                     <li>${obj_dialogo[i].questao_vinculada[1].opcoes[0].op}</li>
                     <li>${obj_dialogo[i].questao_vinculada[1].opcoes[1].op}</li>

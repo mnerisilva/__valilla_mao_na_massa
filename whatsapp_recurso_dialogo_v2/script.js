@@ -89,7 +89,7 @@ function iteraObjDialogo() {
         if(obj_dialogo[i].tem_questao === true){
             elementoQuestao.innerHTML = `
                 <ul>
-                    <li>${obj_dialogo[i].questao_vinculada[0].enunciado}</li>
+                    <li class="enunciado">${obj_dialogo[i].questao_vinculada[0].enunciado}</li>
                     <li>${obj_dialogo[i].questao_vinculada[1].opcoes[0].op}</li>
                     <li>${obj_dialogo[i].questao_vinculada[1].opcoes[1].op}</li>
                     <li>${obj_dialogo[i].questao_vinculada[1].opcoes[2].op}</li>
@@ -98,7 +98,8 @@ function iteraObjDialogo() {
             dialogo.append(elementoQuestao);
             let _ul = elemento.parentElement.querySelectorAll('ul li');
             _ul.forEach(function(item){
-                item.addEventListener('click', _listener)
+                if(item.classList.contains('enunciado')){return} // não aplica listener na "li" do enunciado
+                item.addEventListener('click', _listenerQuestoes)
                 console.log(item);
             });        
         }
@@ -132,6 +133,6 @@ function insereElementoDinamicamente() {
 
 
 
-function _listener(){
-    console.log('_this dentro do _listener: '+this.innerHTML);
+function _listenerQuestoes(){
+    console.log('op: '+this.innerHTML);
 }

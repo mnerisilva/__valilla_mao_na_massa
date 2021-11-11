@@ -2,6 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    list-style: none;
 } 
 
 body {
@@ -150,7 +151,9 @@ body {
     position: absolute;
     width: 100%;
     /*bottom: -100vh;*/
-    bottom: -1050px;
+    /*bottom: -1050px;*/
+
+    transform: scale(.4);
 }
 
 .dialogo h3 {
@@ -193,3 +196,28 @@ body {
     transition: opacity .3s ease-out;
     opacity: 1;
 }
+
+.questao {
+    width: 95%;
+    background-color: #fff;
+    margin: 5px 0;
+    margin-left: 2em;
+    padding: 20px 15px;
+    border-radius: 15px;    
+    margin-bottom: 70px;   
+}
+
+.questao ul li {
+    border-bottom: dotted thin #dedede;
+    cursor: pointer;
+    padding: 8px 8px;
+    font-size: 1.2em;
+
+}
+
+.questao ul li:first-child {
+    background-color: rgb(35, 115, 207);
+    color: #fff;
+    cursor: default;
+}
+

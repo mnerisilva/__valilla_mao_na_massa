@@ -18,12 +18,13 @@ console.log("src: " + src_personage1);
 
 const elementos = [];
 
-insereElementoDinamicamente();
+//insereElementoDinamicamente();
 
 const arrDialogoComReflitaResponda = [];
 
 //const tempos = [3000, 6000, 12000, 18000, 26000, 32000, 38000, 44000];
-const tempos = [3000, 6000, 12000, 18000, 26000];
+//const tempos = [3000, 6000, 12000, 18000, 26000];
+const tempos = [3000, 6000];
 const quantidade = tempos.length;
 
 const todos_h3 = document.querySelectorAll(".dialogo h3"); // todos os h3 da div classe "dialogo"
@@ -42,7 +43,7 @@ let _bottom = dialogo.offsetHeight * -1;
 
 tempos.map((intervalo, index) => {
   setTimeout(function () {
-    if (todos_div[index].classList.contains("esquerda")) {
+    /*if (todos_div[index].classList.contains("esquerda")) {
       src_personage1.setAttribute("src", pers1_src_func_dig);
       for (let x = 1; x <= 2; x++) {
         setTimeout(function () {
@@ -69,21 +70,39 @@ tempos.map((intervalo, index) => {
     console.log("_bottom: " + _bottom);
     _bottom = _bottom + altura;
     console.log("dialogo: " + _bottom + "px");
-    dialogo.style.bottom = _bottom + "px";
+    dialogo.style.bottom = _bottom + "px";*/
   }, intervalo);
 });
 
 // FUNÇÕES DO PROJETO-----------------------------------------------------------------------------------------
 function iteraObjDialogo() {
-  // itera array de dialogos - inicio do bloco - [neste ponto os balões ainda estão escondidos, posicionados fora da janela de exibição - window]
+  // itera e popula divs e h3 baseado objeto dialogo - inicio do bloco - [neste ponto os balões ainda estão escondidos, posicionados fora da janela de exibição - window]
   for (let i = 0; i < obj_dialogo.length; i++) {
-    todos_h3[i].innerHTML = obj_dialogo[i].texto_dialogo.text[0]; // insere dentro dos h3´s da classe "dialogos" o conteúdo externo vindo do array de dialogos[x].texto_dialogo.text
-    obj_dialogo[i].personagem === "1" // posiciona balão de acordo com o personagem (esquerda ou direita)
-      ? (todos_h3[i].dataset.posicao = "1")
-      : (todos_h3[i].dataset.posicao = "2");
-    todos_h3[i].dataset.posicao == 1
-      ? todos_h3[i].parentElement.classList.add("direita")
-      : todos_h3[i].parentElement.classList.add("esquerda");
+    let elemento = document.createElement('div');
+    let posicao = '';
+    obj_dialogo[i].personagem === "1" ? (posicao = "1"): (posicao = "2");
+    obj_dialogo[i].personagem === "1" ? (elemento.classList.add("direita")) : (elemento.classList.add("esquerda"));
+    elemento.innerHTML = `<h3 data-posicao=${posicao}>${obj_dialogo[i].texto_dialogo.text[0]}</h3>`;
+    dialogo.append(elemento);
+    let elementoQuestao = document.createElement('div');
+    elementoQuestao.classList.add('questao')
+        if(obj_dialogo[i].tem_questao === true){
+            elementoQuestao.innerHTML = `
+                <ul>
+                    <li>${obj_dialogo[i].questao_vinculada[0].enunciado}</li>
+                    <li>${obj_dialogo[i].questao_vinculada[1].opcoes[0].op}</li>
+                    <li>${obj_dialogo[i].questao_vinculada[1].opcoes[1].op}</li>
+                    <li>${obj_dialogo[i].questao_vinculada[1].opcoes[2].op}</li>
+                </ul>
+            `
+            dialogo.append(elementoQuestao);
+            let _ul = elemento.parentElement.querySelectorAll('ul li');
+            _ul.forEach(function(item){
+                item.addEventListener('click', _listener)
+                console.log(item);
+            });        
+        }
+    
     if (obj_dialogo[i].tem_questao === true) {
       arrDialogoComReflitaResponda.push(true);
     } else {
@@ -103,4 +122,16 @@ function insereElementoDinamicamente() {
   for (let i = 0; i < obj_dialogo.length; i++) {
     dialogo.append(elementos[i]);
   }
+}
+
+
+
+
+
+
+
+
+
+function _listener(){
+    console.log('_this dentro do _listener: '+this.innerHTML);
 }

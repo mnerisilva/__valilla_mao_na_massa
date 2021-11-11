@@ -19,7 +19,7 @@ export const obj_dialogo = [
     tem_questao: true,
     questao_vinculada: [
       {
-        enunciado: "Qual seria sua resposa?",
+        enunciado: "Qual seria sua resposta?",
       },
       {
         opcoes: [
@@ -56,7 +56,7 @@ export const obj_dialogo = [
             feed: "Perfeito! 😃😃😃",
             frase_contexto: ["Assisti a um vídeo sobre isso hoje mesmo, veja:"],
             conteudo_complementar: [
-              "O que é nuvem? https://www.youtube.com/watch?v=67okcMhiFo4",
+              "<h3>O que é nuvem?</h3>", "https://www.youtube.com/watch?v=67okcMhiFo4",
             ],
           },
         ],

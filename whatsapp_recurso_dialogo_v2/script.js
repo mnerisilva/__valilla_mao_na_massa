@@ -78,32 +78,63 @@ tempos.map((intervalo, index) => {
 function iteraObjDialogo() {
   // itera e popula divs e h3 baseado objeto dialogo - inicio do bloco - [neste ponto os balões ainda estão escondidos, posicionados fora da janela de exibição - window]
   for (let i = 0; i < obj_dialogo.length; i++) {
-    let elemento = document.createElement('div');
-    let posicao = '';
-    obj_dialogo[i].personagem === "1" ? (posicao = "1"): (posicao = "2");
-    obj_dialogo[i].personagem === "1" ? (elemento.classList.add("direita")) : (elemento.classList.add("esquerda"));
-    elemento.innerHTML = `<h3 data-posicao=${posicao}>${obj_dialogo[i].texto_dialogo.text[0]}</h3>`;
+    let elemento = document.createElement("div");
+    let posicao = "";
+    obj_dialogo[i].personagem === "1" ? (posicao = "1") : (posicao = "2");
+    obj_dialogo[i].personagem === "1"
+      ? elemento.classList.add("direita")
+      : elemento.classList.add("esquerda");
+    elemento.innerHTML = `<h3 data-posicao=${posicao}>${obj_dialogo[i].texto_dialogo.text[0]}<br />${obj_dialogo[i].texto_dialogo.text[1]}</h3>`;
     dialogo.append(elemento);
-    let elementoQuestao = document.createElement('div');
-    elementoQuestao.classList.add('questao')
-        if(obj_dialogo[i].tem_questao === true){
-            elementoQuestao.innerHTML = `
-                <ul data-id_dialogo=${obj_dialogo[i].id_dialogo} data-index=${i}>
-                    <li class="enunciado">${obj_dialogo[i].questao_vinculada[0].enunciado}</li>
-                    <li>${obj_dialogo[i].questao_vinculada[1].opcoes[0].op}</li>
-                    <li>${obj_dialogo[i].questao_vinculada[1].opcoes[1].op}</li>
-                    <li>${obj_dialogo[i].questao_vinculada[1].opcoes[2].op}</li>
-                </ul>
-            `
-            dialogo.append(elementoQuestao);
-            let _ul = elemento.parentElement.querySelectorAll('ul li');
-            _ul.forEach(function(item){
-                if(item.classList.contains('enunciado')){return} // não aplica listener na "li" do enunciado
-                item.addEventListener('click', _listenerQuestoes)
-                console.log(item);
-            });        
-        }
-    
+    let elementoQuestao = document.createElement("div");
+    elementoQuestao.classList.add("questao");
+    if (obj_dialogo[i].tem_questao === true) {
+      elementoQuestao.innerHTML = `
+                <div id=${obj_dialogo[i].id_dialogo}>
+                  <ul data-id_dialogo=${obj_dialogo[i].id_dialogo} data-index=${i}>
+                      <li class="enunciado">${obj_dialogo[i].questao_vinculada[0].enunciado}</li>
+                      <li>${obj_dialogo[i].questao_vinculada[1].opcoes[0].op}</li>
+                      <li>${obj_dialogo[i].questao_vinculada[1].opcoes[1].op}</li>
+                      <li>${obj_dialogo[i].questao_vinculada[1].opcoes[2].op}</li>
+                  </ul>
+                </div>
+            `;
+      dialogo.append(elementoQuestao);
+      let feed = document.createElement("div");
+      feed.innerHTML = `<div class="direita feed">
+                    <h3 data-posicao="1">${obj_dialogo[i].questao_vinculada[2].feedbacks[0].feed}</h3>
+                  </div>`;
+      dialogo.append(elementoQuestao);
+      dialogo.append(feed);
+      let frase_contexto = document.createElement("div");
+      frase_contexto.innerHTML = `<div class="direita feed">
+                    <h3 data-posicao="1">${obj_dialogo[i].questao_vinculada[2].feedbacks[0].frase_contexto}</h3>
+                  </div>`;
+      dialogo.append(frase_contexto);
+      let conteudo_complementar = document.createElement("div");
+      conteudo_complementar.innerHTML = `<div class="direita feed">
+                    <h3 data-posicao="1">${
+                      obj_dialogo[i].questao_vinculada[2].feedbacks[0]
+                        .conteudo_complementar[0]
+                    }<br />
+                      ${
+                        obj_dialogo[i].questao_vinculada[2].feedbacks[0]
+                          .conteudo_complementar[1]
+                      }
+                      </h3>
+                      <br />
+                      ${retornaEmbed("hD-ffUPmqGA")}
+                  </div>`;
+      dialogo.append(conteudo_complementar);
+      let _ul = elemento.parentElement.querySelectorAll("ul li");
+      _ul.forEach(function (item) {
+        if (!item.classList.contains("enunciado")) {
+          item.addEventListener("click", _listenerQuestoes);
+          console.log(item);
+        } // aplica listener nas li´s das opções
+      });
+    }
+
     if (obj_dialogo[i].tem_questao === true) {
       arrDialogoComReflitaResponda.push(true);
     } else {
@@ -125,14 +156,14 @@ function insereElementoDinamicamente() {
   }
 }
 
+function _listenerQuestoes() {
+  console.log("op: " + this.innerHTML);
+}
 
+function retornaEmbed(_cod) {
+  return `
+    
+                        <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/${_cod}?enablejsapi=1&amp;version=3&amp;playerapiid=ytplayer&amp;showinfo=0&amp;modestbranding=1&amp;fs=1&amp;rel=0;cc_load_policy=1" allowfullscreen=""></iframe>
 
-
-
-
-
-
-
-function _listenerQuestoes(){
-    console.log('op: '+this.innerHTML);
+  `;
 }

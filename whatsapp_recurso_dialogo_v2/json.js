@@ -40,7 +40,8 @@ export const obj_dialogo = [
             feed: "Acho que é melhor salvar na nuvem.",
             frase_contexto: ["Veja mais sobre isso neste vídeo:"],
             conteudo_complementar: [
-              "O que é nuvem? https://www.youtube.com/watch?v=67okcMhiFo4",
+              "<strong>O que é nuvem?</strong>",
+              "https://www.youtube.com/watch?v=67okcMhiFo4",
             ],
           },
           {
@@ -49,14 +50,16 @@ export const obj_dialogo = [
               "Pode até ser, mas o melhor é salvar em uma nuvem.",
             ],
             conteudo_complementar: [
-              "O que é nuvem? https://www.youtube.com/watch?v=67okcMhiFo4",
+              "<strong>O que é nuvem?</strong>",
+              "https://www.youtube.com/watch?v=67okcMhiFo4",
             ],
           },
           {
             feed: "Perfeito! 😃😃😃",
             frase_contexto: ["Assisti a um vídeo sobre isso hoje mesmo, veja:"],
             conteudo_complementar: [
-              "<h3>O que é nuvem?</h3>", "https://www.youtube.com/watch?v=67okcMhiFo4",
+              "<strong>O que é nuvem?</strong>",
+              "https://www.youtube.com/watch?v=67okcMhiFo4",
             ],
           },
         ],
@@ -96,7 +99,7 @@ export const obj_dialogo = [
             feed: "Acabaram de me indicar o Google Drive.",
             frase_contexto: ["Veja como compartilhar arquivos nele:"],
             conteudo_complementar: [
-              "<h3>Google Drive - Como compartilhar arquivos</h3>",
+              "<strong>Google Drive - Como compartilhar arquivos</strong>",
               " https://www.youtube.com/watch?v=hD-ffUPmqGA",
             ],
           },
@@ -106,7 +109,7 @@ export const obj_dialogo = [
               "Acabaram de me indicar o Google Drive, veja como compartilhar arquivos nele:",
             ],
             conteudo_complementar: [
-              "<h3>Google Drive - Como compartilhar arquivos</h3>",
+              "<strong>Google Drive - Como compartilhar arquivos</strong>",
               " https://www.youtube.com/watch?v=hD-ffUPmqGA",
             ],
           },
@@ -117,7 +120,7 @@ export const obj_dialogo = [
               "Encontrei este vídeo que mostra como compartilhar arquivos nele:",
             ],
             conteudo_complementar: [
-              "<h3>Google Drive - Como compartilhar arquivos</h3>",
+              "<strong>Google Drive - Como compartilhar arquivos</strong>",
               "https://www.youtube.com/watch?v=hD-ffUPmqGA",
             ],
           },
@@ -158,7 +161,7 @@ export const obj_dialogo = [
             feed: "Dá uma olhada neste artigo, acho que ele vai nos dar uma resposta:",
             frase_contexto: [],
             conteudo_complementar: [
-              "<h3>A importância de encurtar uma url antes de compartilhar</h3>",
+              "<strong>A importância de encurtar uma url antes de compartilhar</strong>",
               " https://tinyurl.com/y8m3e729",
             ],
           },
@@ -166,7 +169,7 @@ export const obj_dialogo = [
             feed: "Dá uma olhada neste artigo, acho que ele vai nos dar uma resposta:",
             frase_contexto: [],
             conteudo_complementar: [
-              "<h3>A importância de encurtar uma url antes de compartilhar</h3>",
+              "<strong>A importância de encurtar uma url antes de compartilhar</strong>",
               "https://tinyurl.com/y8m3e729",
             ],
           },
@@ -174,7 +177,7 @@ export const obj_dialogo = [
             feed: "Verdade!",
             frase_contexto: ["Vi algo sobre isso no artigo:"],
             conteudo_complementar: [
-              "<h3>A importância de encurtar uma url antes de compartilhar</h3>",
+              "<strong>A importância de encurtar uma url antes de compartilhar</strong>",
               "https://tinyurl.com/y8m3e729",
             ],
           },
@@ -215,7 +218,7 @@ export const obj_dialogo = [
             feed: "Acabaram de me mandar este link sobre como compartilhar uma pasta no Google Drive.",
             frase_contexto: ["Acho que essa vai ser a melhor opção:"],
             conteudo_complementar: [
-              "<h3>Como compartilhar uma pasta no Google Drive</h3>",
+              "<strong>Como compartilhar uma pasta no Google Drive</strong>",
               " https://tecnoblog.net/237738/ativar-compartilhar-pasta-google-drive",
             ],
           },
@@ -223,7 +226,7 @@ export const obj_dialogo = [
             feed: "Acabaram de me mandar este link sobre como compartilhar uma pasta no Google:",
             frase_contexto: ["Acho que essa vai ser a melhor opção:"],
             conteudo_complementar: [
-              "<h3>Como compartilhar uma pasta no Google Deive</h3>",
+              "<strong>Como compartilhar uma pasta no Google Deive</strong>",
               " https://tecnoblog.net/237738/ativar-compartilhar-pasta-google-drive",
             ],
           },
@@ -231,7 +234,7 @@ export const obj_dialogo = [
             feed: "Que ótima solução! 👏",
             frase_contexto: ["Acho que vi algo sobre isso neste link:"],
             conteudo_complementar: [
-              "<h3>Como compartilhar uma pasta no Google Drive</h3>",
+              "<strong>Como compartilhar uma pasta no Google Drive</strong>",
               "https://tecnoblog.net/237738/ativar-compartilhar-pasta-google-drive",
             ],
           },
